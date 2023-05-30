@@ -1,0 +1,396 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Отель AVA</title>
+	<link rel="icon" href="images/logotype.jpg">
+	<style>
+		@media(max-width:992px)
+		{
+			.nav-flex{
+				display: none;
+			}
+			.black-title > div
+			{
+				padding-left: 15%;
+			}
+			.f2 >ul{
+				padding-left: 2rem;
+			}
+			.flex-footer{
+				flex-direction: column;
+			}
+			.fl{
+				width: 100%;
+			}
+		}
+		@media(min-width: 992px) and (max-width: 1040px)
+		{
+			.black-title > div
+			{
+				padding-left: 17%;
+			}
+			.flex-footer{
+				flex-direction: column;
+			}
+			.fl{
+				width: 100%;
+			}
+		}
+		@media(min-width: 1040px) and (max-width: 1230px)
+		{
+			.black-title > div
+			{
+				padding-left: 21%;
+			}
+		}
+		@media(min-width: 1230px) and (max-width: 1370px)
+		{
+			.black-title > div
+			{
+				padding-left: 25%;
+			}
+		}
+		@media(min-width: 1370px) and (max-width: 1570px)
+		{
+			.black-title > div
+			{
+				padding-left: 28%;
+			}
+		}
+		@media(min-width: 1570px) and (max-width: 1760px)
+		{
+			.black-title > div
+			{
+				padding-left: 31%;
+			}
+		}
+		@media(min-width: 1760px) and (max-width: 1875px)
+		{
+			.black-title > div
+			{
+				padding-left: 33%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+			<div class="container-fluid ">
+				
+					<a class="navbar-brand" href="index.html" >
+						<img src="images/bely.svg" alt="" width="100" height="40" class="d-inline-block ">
+						A<span>V</span>A HOTEL
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 		aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					
+					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+						
+						<div style="color: white" class="navbar-nav">
+							<a class="nav-link" aria-current="page" href="uslugi.html" style="color: white">Главная</a>
+							<a class="nav-link" href="about-us.html" style="color: white">Отзывы</a>
+						</div>
+						
+							<button type="button" class="btn btn-yellow">Забронировать</button>
+						
+					</div>
+			</div>
+		</nav>
+		
+	</header>
+	<section>
+		<div class="section-1">
+			<!--<img src="images/slider-5.jpg" style="width: 100%">-->
+			
+			<div class="black-title">
+				Семейный отель AVA для комфортного отдыха
+			</div>
+			<div class="filters">
+				<div>ЗАБРОНИРОВАТЬ НОМЕР</div>
+				<div class="parametrs">
+					<form>
+						<p>Дата заселения: <input class="calendar" type="date" value="2023-05-24" min="2023-05-24" name="calendar"></p>
+						<p>Дата выселения: <input class="calendar" type="date" min="2023-05-24" name="calendar"></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="section-2">
+			<div class="second-sec">
+				<div class="title-1">
+					<div class="title-1-1">Приготовьтесь оказаться в прекрасном месте</div>
+					<div class="title-1-2">The<span>Sun</span>Hotel</div>
+				</div>
+				<div class="subtitle">
+					<div class="subtitle-1">
+						<p>
+							Расположенный в Анталии / Кадрие и очаровывающий своих гостей своей природной красотой, 
+							The Sun Hotel отвечает ожиданиям своих гостей неограниченными удобствами и площадью 100 000 м². 
+							В наше отеле распахиваются двери праздника.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+			  <div class="carousel-indicators" >
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			  </div>
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+				  <img src="images/fam-bungalo.jpg" class="d-block w-100">
+				  <div class="carousel-caption d-none d-md-block">
+					<h5>Комнаты</h5>
+					<p>В нашем отеле присутсвуют команты как для большой семьи, так и для одного человека</p>
+				  </div>
+				</div>
+				<div class="carousel-item">
+				  <img src="images/kitchen.jpg" class="d-block w-100">
+				  <div class="carousel-caption d-none d-md-block">
+					<h5>Рестораны</h5>
+					<p>В нашем отеле представлены несколько ресторанов, в которых готовят разнообразную кухню</p>
+				  </div>
+				</div>
+				<div class="carousel-item">
+				  <img src="images/territory-2.jpg" class="d-block w-100">
+				  <div class="carousel-caption d-none d-md-block">
+					<h5>Территория</h5>
+					<p>На нашей территории присутствует множество деревьев, кустарников и цветов</p>
+				  </div>
+				</div>
+			  </div>
+			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Предыдущий</span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Следующий</span>
+			  </button>
+			</div>
+		</div>
+	</section>
+	<section class="section-2">
+		<div class="rooms">
+			<p>Наслаждайтесь пребыванием</p>
+			<h1 style="font-weight: 400">Наши номера</h1>
+			<hr class="hr-room">
+			<div class="room-title">
+				Есть номера в разных частях отеля: 
+				<ul class="room-sub">
+					<li>БУНГАЛО - для больших семей и компаний в отдельных коттеджах</li> 
+					<li>LUX - для тех, кто хочет отдохнуть еще с большим удобством в отдельном корпусе</li>
+					<li>СТАНДАРТ - для небольших семей и пар в главном здании</li>
+				</ul>
+			</div>
+		</div>
+		<div class="card mb-3 shadow bg-white rounded" style="width: 100%;">
+		  <div class="row g-0">
+			<div class="col-md-4">
+				<a><img src="images/standart.jpg" class="img-fluid rounded-start" style="height: 100%" alt="..."></a>
+			</div>
+			<div class="col-md-8">
+			  <div class="card-body room-flex">
+				<div>
+					<h2 class="card-title">Стандартный номер (2 человека) <span>23м²</span></h2>
+				</div>
+				<div>
+					<p class="card-text">
+					Центральная система кондиционирования воздуха, телевизор, мини-бар, телефон с прямым набором номера, сейф, 
+					ламинатный паркет, французский балкон
+				</p>
+				</div>
+				<div class="card-flex-row">
+					<p class="card-text"><small class="text-muted">Рейтинг номера</small>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill star-yellow" viewBox="0 0 16 16">
+						  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill star-yellow" viewBox="0 0 16 16">
+						  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill star-yellow" viewBox="0 0 16 16">
+						  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill star-yellow" viewBox="0 0 16 16">
+						  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half star-yellow" viewBox="0 0 16 16">
+						  <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+						</svg>
+					</p>
+					<div style="font-size: 1.5rem;">2 200 рублей/сутки</div>
+					<button type="button" class="btn btn-outline-success" style="margin-bottom: 10px;">Посмотреть</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="card mb-3 shadow bg-white rounded" style="width: 100%;">
+		  <div class="row g-0">
+			<div class="col-md-8">
+			  <div class="card-body room-flex">
+				<div>
+					<h2 class="card-title">Номер с террасой (4 человека) <span>38м²</span></h2>
+				</div>
+				<div>
+					<p class="card-text">
+					Номер с большой террасой и с видом на море расположен в главном здании отеля.
+					<br>	
+					В номере центральная система кондиционирования, ТВ, мини-бар, телефон, сейф, ламинатный паркет, балкон. 
+					В ванной комнате ванна, туалет, фен.
+					</p>
+				</div>
+				<div class="card-flex-row">
+					<p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+					<button type="button" class="btn btn-outline-success">Посмотреть</button>
+				</div>
+			  </div>
+			</div>
+				<div class="col-md-4">
+					<a><img src="images/terrasa.jpg" class="img-fluid rounded-start-1"  style="height: 100%"alt="..."></a>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3 shadow bg-white rounded" style="width: 100%;">
+		  <div class="row g-0">
+			<div class="col-md-4">
+			  <a><img src="images/lux.jpg" class="img-fluid rounded-start" style="height: 100%" alt="..."></a>
+			</div>
+			<div class="col-md-8">
+			  <div class="card-body room-flex">
+				<div>
+					<h2 class="card-title"> Номер Lux (2 человека) <span>76м²</span></h2>
+				</div>
+				<div>
+					<p class="card-text">
+						Центральная система кондиционирования, телевизор, минибар, телефон с прямым набором номера, сейф, ковровое покрытие, балкон. В ванной комнате: ванна, туалет, фен, телефон 
+					</p>
+				</div>
+				<div class="card-flex-row">
+					<p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+					<button type="button" class="btn btn-outline-success">Посмотреть</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="card mb-3 shadow bg-white rounded" style="width: 100%;">
+		  <div class="row g-0">
+			<div class="col-md-8">
+			  <div class="card-body room-flex">
+				<div>
+					<h2 class="card-title">Бунгало семейное (5 человек) <span>45м²</span></h2>
+				</div>
+				<div>
+					<p class="card-text">
+						Центральная система кондиционирования, телевизор, минибар, телефон с прямым выходом, сейф, ламинат, балкон. В ванной комнате: душ, туалет, фен, телефон. 2 спальни (с раздельными дверями): 1 двуспальная кровать, 4 односпальные кровати
+					</p>
+				</div>
+				<div class="card-flex-row">
+					<p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+					<button type="button" class="btn btn-outline-success">Посмотреть</button>
+				</div>
+			  </div>
+			</div>
+				<div class="col-md-4">
+					<a><img src="images/fam-bungalo.jpg" class="img-fluid rounded-start-1" style="height: 100%" alt="..."></a>
+				</div>
+		  </div>
+		</div>
+		<div class="card mb-3 shadow bg-white rounded" style="width: 100%;">
+		  <div class="row g-0">
+			<div class="col-md-4">
+			  <a><img src="images/bungalo.jpg" class="img-fluid rounded-start" style="height: 100%" alt="..."></a>
+			</div>
+			<div class="col-md-8">
+			  <div class="card-body room-flex">
+				<div>
+					<h2 class="card-title"> Стандартное бунгало (3 человека) <span>23м²</span></h2>
+				</div>
+				<div>
+					<p class="card-text">
+						Центральная система кондиционирования, телевизор, минибар, телефон с прямым набором номера, сейф, ламинат, балкон. В ванной комнате: ванна, туалет, фен, телефон 
+					</p>
+				</div>
+				<div class="card-flex-row">
+					<p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+					<button type="button" class="btn btn-outline-success">Посмотреть</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</section>
+	<section class="section-2">
+		<div class="rooms">
+			<p>Связаться с нами</p>
+			<h1 style="font-weight: 400">Заказать сейчас</h1>
+			<hr class="hr-room">
+			<div class="room-sub">
+				Вы можете связаться с нами для получения дополнительной информации или бронирования 
+				<div class="flex-reg">
+					<button type="button" class="btn btn-warning mar-right">Позвоните сейчас</button>
+					<button type="button" class="btn btn-warning">Забронировать</button>
+				</div>
+		</div>
+	</section>
+	<footer class="section-2 gray-background">
+		<div class="flex-footer">
+			<div class="fl">
+				<h1><a href="index.html">The<span>Sun</span>Hotel</a></h1>
+				<div>
+					<img src="images/star-1.png" width="20px">
+					<img src="images/star-1.png" width="20px">
+					<img src="images/star-1.png" width="20px"> 
+					<img src="images/star-1.png" width="20px"> 
+					<img src="images/star-1.png" width="20px">
+				</div>
+				<p class="otstup">
+					Прекрасная территория отеля, напоминающая сад, подарит хорошее настроение и освежит в жаркие дни. 
+					В отеле находятся рестораны, в которых готовят блюда разных стран
+				</p>
+			</div>
+			<div class="f2-flex-row">
+				<div class="f2">
+					<ul>
+						<li><a href="about-us.html">О нас</a></li>
+						<li><a href="about-us.html">Расположение</a></li>
+						<li><a href="uslugi.html">Услуги</a></li>
+					</ul>
+				</div>
+				<div class="f2 ">
+					<ul>
+						<li><a href="galerea.html">Галерея</a></li>
+						<li><a href="galerea.html">Комнаты</a></li>
+						<li><a href="galerea.html">Рестораны</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="f3">
+				<div class="f3-flex">
+					<a><svg xmlns="http://www.w3.org/2000/svg" class="size-phone" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+					<path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+					</svg></a>
+					<p>+7 800 000 00 00</p>
+				</div>
+				<div class="f3-flex">
+					<a><svg xmlns="http://www.w3.org/2000/svg" class="size-phone" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+					<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+					</svg></a>
+					<p>thesunhotel@mail.ru</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
+	

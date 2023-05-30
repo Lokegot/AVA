@@ -1,0 +1,16 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <g stroke-width="6" id="svg_15">
+   <path stroke="#ff007f" stroke-width="3" id="svg_4" d="m334.5,262l72,162" opacity="undefined" stroke-linecap="undefined" stroke-linejoin="undefined" fill="#ff00ff"/>
+   <path stroke="#ff007f" stroke-width="3" id="svg_5" d="m466.5,259l-62,165" opacity="undefined" stroke-linecap="undefined" stroke-linejoin="undefined" fill="#ff00ff"/>
+   <path stroke="#3f007f" id="svg_6" d="m466.5,261l32,-84.99999" opacity="undefined" stroke-linecap="undefined" stroke-linejoin="undefined" stroke-width="3" fill="none"/>
+   <path stroke="#3f007f" id="svg_7" d="m335.5,265l-35,-82.99999" opacity="undefined" stroke-linecap="undefined" stroke-linejoin="undefined" stroke-width="3" fill="none"/>
+   <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_8" y2="329" x2="560.5" y1="177" x1="497.5" stroke-width="3" stroke="#3f007f" fill="none"/>
+   <path stroke="#3f007f" id="svg_9" d="m300.5,180l-61,152" opacity="undefined" stroke-linecap="undefined" stroke-linejoin="undefined" stroke-width="3" fill="none"/>
+   <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_10" y2="260" x2="530.5" y1="259" x1="465.5" stroke-width="3" stroke="#3f007f" fill="none"/>
+   <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_11" y2="265" x2="266.5" y1="264" x1="335.5" stroke-width="3" stroke="#3f007f" fill="none"/>
+  </g>
+ </g>
+</svg>
