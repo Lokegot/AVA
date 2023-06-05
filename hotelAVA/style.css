@@ -2,6 +2,9 @@
 .bg-light{
 	background-color: rgba(228, 103, 179, 0.98) !important;
 }
+.navbar{
+	height: 70px;
+}
 .container-fluid{
 	align-items: flex-start!important;
 }
@@ -61,9 +64,42 @@
 	justify-content: center;
 	align-content: center;
 	margin-bottom: 2rem;
-	margin-top: 5rem;
+	margin-top: 70px;
 	width: 100%;
 	background: url("images/photo1.jpg") center 0 no-repeat;
+	background-repeat: no-repeat;
+    background-position: 50% 60%;
+    height: 20%;
 }
-
-
+.reserved{
+	padding: 2rem;
+	padding-bottom:1rem;
+}
+.top-filters{
+	display: flex;
+	color: white;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 2rem;
+	background-color: rgba( 0, 0, 0, 0.4);
+}
+.parametrs{
+	padding: 1rem;
+}
+.forms{
+	padding: 3rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.date{
+	margin-top: 2rem;
+	margin-bottom:0.5rem;
+}
+.filters{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.btn-warning{
+	margin-top: 1rem;
+}

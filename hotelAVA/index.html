@@ -106,17 +106,32 @@
 	<section>
 		<div class="section-1">
 			<!--<img src="images/slider-5.jpg" style="width: 100%">-->
-			
-			<div class="black-title">
-				Семейный отель AVA для комфортного отдыха
-			</div>
-			<div class="filters">
-				<div>ЗАБРОНИРОВАТЬ НОМЕР</div>
-				<div class="parametrs">
-					<form>
-						<p>Дата заселения: <input class="calendar" type="date" value="2023-05-24" min="2023-05-24" name="calendar"></p>
-						<p>Дата выселения: <input class="calendar" type="date" min="2023-05-24" name="calendar"></p>
-					</form>
+			<div class="top-filters">
+				<div class="black-title">
+					Семейный отель AVA для комфортного отдыха
+				</div>
+				<div class="filters" >
+					<div class="reserved">ЗАБРОНИРОВАТЬ НОМЕР</div>
+					<div class="parametrs" style="width:90%">
+						<form class="forms">
+							<div style="margin-top: 0;"class="date">Дата заселения: </div>
+							<input style="width:250px" class="calendar" type="date" value="2023-05-24" min="2023-05-24" name="calendar">
+							<div class="date">Дата выселения: </div>
+							<input style="width:250px" class="calendar" type="date" min="2023-05-24" name="calendar">
+							<input style="margin-top:1.5rem; margin-bottom: 1.5rem; width:250px" type="number">
+							<div class="dropdown" style="width:250px">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+									Тариф питания
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<li><a class="dropdown-item" href="#">Всё включено</a></li>
+									<li><a class="dropdown-item" href="#">Только завтрак</a></li>
+									<li><a class="dropdown-item" href="#">Только ужин</a></li>
+								</ul>
+							</div>
+							<button type="button" class="btn btn-warning">Найти номера</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
