@@ -95,6 +95,7 @@
 .reserved{
 	padding: 2rem;
 	padding-bottom:1rem;
+	font-size: 1.3rem;
 }
 .top-filters{
 	display: flex;
@@ -103,7 +104,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 2rem;
-	background-color: rgba( 0, 0, 0, 0.4);
+	background-color: rgba( 0, 0, 0, 0.5);
 }
 .parametrs{
 	padding: 1rem;
@@ -121,6 +122,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: rgba( 0, 0, 0, 0.5);
+	border-radius: 5%;
 }
 .btn-warning{
 	margin-top: 1rem;
