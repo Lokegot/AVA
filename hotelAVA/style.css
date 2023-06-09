@@ -22,6 +22,9 @@
 	background-color: #FFFD73;
 	margin-left: 20%;
 }
+.btn-warning{
+	background-color: #FFFD73;
+}
 .nav-flex{
 	display: flex;
 	
@@ -71,6 +74,24 @@
     background-position: 50% 60%;
     height: 20%;
 }
+.hotel-title{
+	padding-top: 2rem;
+	padding-left: 1rem;
+	font-size: 2rem;
+	font-weight: 750;
+}
+.section-2{
+	padding-bottom: 3rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+.information{
+	text-align: center;
+}
+.info{
+	text-align: center;
+	padding-bottom: 1.5rem;
+}
 .reserved{
 	padding: 2rem;
 	padding-bottom:1rem;
@@ -79,6 +100,7 @@
 	display: flex;
 	color: white;
 	flex-direction: row;
+	align-items: center;
 	justify-content: space-between;
 	padding: 2rem;
 	background-color: rgba( 0, 0, 0, 0.4);
@@ -102,4 +124,97 @@
 }
 .btn-warning{
 	margin-top: 1rem;
+}
+.svg-about{
+	height: 1.3rem;
+	width: 1.3rem;
+	color: #856FD7;
+	margin-right: 1.5rem;
+	margin-bottom: 5px;
+}
+.usl-flex-row-1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.room-info{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+}
+.card-title{
+	margin-bottom: 1rem;
+	font-weight: 750;
+}
+.room-dot{
+	color: #856FD7;
+	width: 30px;
+	height: 30px;
+}
+.btn-info{
+	color: white;
+	background-color: #856FD7;
+	border-color: #856FD7;
+	width: 40%;
+	margin: 1rem;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+.fl{
+	width: 20%;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.f2-flex-row{
+	display: flex;
+	margin-bottom: 2rem;
+}
+.pink-background{
+	background-color: #e467b3;
+	padding-bottom: 0.5rem;
+}
+.fl> h1 > a{
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 3rem;
+	color: white;
+}
+.fl >h1> a > span{
+	color:#FFFD73;
+}
+.flex-footer{
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2rem;
+	padding-bottom: 0.5rem;
+	align-items: center;
+}
+.f2 a{
+	font-size: 1.2rem;
+    text-transform: uppercase;
+	padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+	text-decoration: none;
+}
+.f3{
+	width: 20%;
+	color: white;
+}
+.f2-flex-row p{
+	font-size: 20px;
+}
+.photo-size{
+	width: 200px;
+	height: 100px;
+}
+.size-phone{
+	width: 2rem;
+	height: 2rem;
+	color: #FFFD73;
+	margin-right: 1rem;
 }
