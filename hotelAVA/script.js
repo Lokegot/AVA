@@ -1,26 +1,55 @@
-let counter = 0;
-  
-const counterValue = document.getElementById('counter-value1');
-const incrementBtn = document.getElementById('increment-btn1');
-const decrementBtn = document.getElementById('decrement-btn1');
+let counter1 = 0;
+let counter2 = 0;
+
+const counterValue1 = document.getElementById('counter-value1');
+const incrementBtn1 = document.getElementById('increment-btn1');
+const decrementBtn1 = document.getElementById('decrement-btn1');
+
+const counterValue2 = document.getElementById('counter-value2');
+const incrementBtn2 = document.getElementById('increment-btn2');
+const decrementBtn2 = document.getElementById('decrement-btn2');
 const resetBtn = document.querySelector('#reset');
   
 // To increment the value of counter
-incrementBtn.addEventListener('click', () => {
-    counter++;
-    counterValue.innerHTML = counter;
+incrementBtn1.addEventListener('click', () => {
+    counter1++;
+    counterValue1.innerHTML = counter1;
 });
   
-// To decrement the value of counter
-decrementBtn.addEventListener('click', () => {
-    counter--;
-    counterValue.innerHTML = counter;
+// To increment the value of counter
+incrementBtn2.addEventListener('click', () => {
+    counter2++;
+    counterValue2.innerHTML = counter2;
 });
+
+// To decrement the value of counter
+decrementBtn1.addEventListener('click', () => 
+    {
+        if(counter1 > 0 )
+        {
+            counter1--;
+        }
+        else counter1 = 0;
+    counterValue1.innerHTML = counter1;
+    });
+
+// To decrement the value of counter
+decrementBtn2.addEventListener('click', () => 
+    {
+        if(counter2 >0 )
+        {
+            counter2--;
+        }
+        else counter2 = 0;
+    counterValue2.innerHTML = counter2;
+    });
   
 // To reset the counter to zero
 resetBtn.addEventListener('click', reset);
   
 function reset() {
-    counter = 0;
-    counterValue.innerHTML = counter;
+    counter1 = 0;
+    counter2 = 0;
+    counterValue1.innerHTML = counter1;
+    counterValue2.innerHTML = counter2;
 }
