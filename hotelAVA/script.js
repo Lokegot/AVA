@@ -43,13 +43,3 @@ decrementBtn2.addEventListener('click', () =>
         else counter2 = 0;
     counterValue2.innerHTML = counter2;
     });
-  
-// To reset the counter to zero
-resetBtn.addEventListener('click', reset);
-  
-function reset() {
-    counter1 = 0;
-    counter2 = 0;
-    counterValue1.innerHTML = counter1;
-    counterValue2.innerHTML = counter2;
-}

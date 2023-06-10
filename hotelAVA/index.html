@@ -118,19 +118,27 @@
 							<input style="width:250px" class="calendar" type="date" value="2023-05-24" min="2023-05-24" name="calendar">
 							<div class="date">Дата выселения: </div>
 							<input style="width:250px" class="calendar" type="date" min="2023-05-24" name="calendar">
-							<div class="date">Количество гостей: </div>
-							<div class="counter1">
-								<button id="decrement-btn1">-</button>
-								<div id="counter-value1">0</div>
-								<button id="increment-btn1">+</button>
-							</div>
-							<div class="counter2">
-								<button id="decrement-btn2">-</button>
-								<div id="counter-value2">0</div>
-								<button id="increment-btn2">+</button>
-							</div>
-							<button id="reset">Сбросить</button>
+							<div class="guest-form">Количество гостей: 
+								<div class="guests">
+									<div class="counter">
+										<div class="humans">Взрослые</div>
+										<div class="humanCount">
+											<button id="decrement-btn1">-</button>
+											<div id="counter-value1">0</div>
+											<button id="increment-btn1">+</button>
+										</div>
+									</div>
 
+									<div class="counter">
+										<div class="humans">Дети</div>
+										<div class="humanCount">
+											<button id="decrement-btn2">-</button>
+											<div id="counter-value2">0</div>
+											<button id="increment-btn2">+</button>
+										</div>
+									</div>
+								</div>
+							</div>
 							<!--<input style="margin-top:1.5rem; margin-bottom: 1.5rem; width:250px" type="number">-->
 							<div class="dropdown" style="width:250px">
 								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">

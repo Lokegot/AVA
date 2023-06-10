@@ -23,7 +23,9 @@
 	margin-left: 20%;
 }
 .btn-warning{
-	background-color: #FFFD73;
+	background-color: #e467b3;
+	border: 1px solid #e467b3;
+	color: white;
 }
 .nav-flex{
 	display: flex;
@@ -75,8 +77,8 @@
     height: 20%;
 }
 .hotel-title{
+	padding: 1rem;
 	padding-top: 2rem;
-	padding-left: 1rem;
 	font-size: 2rem;
 	font-weight: 750;
 }
@@ -103,7 +105,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding: 2rem;
+	padding: 2.5rem;
 	background-color: rgba( 0, 0, 0, 0.5);
 }
 .parametrs{
@@ -124,16 +126,58 @@
 	align-items: center;
 	background-color: rgba( 0, 0, 0, 0.5);
 	border-radius: 5%;
+	width: 500px;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 .btn-warning{
 	margin-top: 1rem;
 }
-/**********************************/
-.counter{
-    width: 30%;
-    display: flex;
-    justify-content: center;
+
+.guest-form{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
+.guests{
+    display: flex;
+    justify-content: space-between;
+	flex-direction: row;
+	margin-top: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border: 1px solid white;
+	width: 320px;
+}
+.counter{
+	display: flex;
+	flex-direction: column;
+	margin-right: 1rem;
+}
+.humanCount{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.humanCount button{
+	margin-left: 1rem;
+	margin-right: 1rem;
+	border-radius: 50%;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #856FD7;
+	border: 1px solid #856FD7;
+	font-size: 17px;
+	color: white;
+}
+.humans{
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+}
+/**********************************
 #increment-btn, #decrement-btn, #reset{
     height: 50px;
     width: 120px;
@@ -145,9 +189,7 @@
     color: white;
     margin: 20px;
 }
-#reset{
-    font-size: 20px;
-}
+
 #counter-value{
     height: 50px;
     min-width: 120px;
@@ -159,7 +201,7 @@
     justify-content: center;
     align-items: center;
 }
-/**********************************/
+**********************************/
 .svg-about{
 	height: 1.3rem;
 	width: 1.3rem;
