@@ -303,3 +303,30 @@
 .input-group{
 	width: 50%;
 }
+.input-group-text{
+	background-color: #856FD7;
+	color: white;
+}
+
+.form-control{
+	border-color: #856FD7;
+}
+.btn-outline-secondary{
+	border-color: #856FD7;
+	color: #856FD7;
+}
+.btn-outline-secondary:hover{
+	border-color: #856FD7;
+	background-color: #856FD7;
+}
+.btn-outline-primary{
+	margin-top: 2rem;
+	color: white;
+	border-color:#856FD7;
+	background-color: #856FD7;
+}
+.btn-outline-primary:hover{
+	background-color: white;
+	border-color:#856FD7;
+	color:#856FD7;
+}
