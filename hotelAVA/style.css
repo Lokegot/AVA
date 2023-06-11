@@ -295,10 +295,9 @@
 }
 
 .section-otzyv{
-
-	margin: 2rem;
-	margin-top: 75px;
-	width: 90%;
+	background-color:rgba(255, 253, 115, 0.3);
+	padding: 2rem;
+	padding-top: 75px;
 }
 .input-group{
 	width: 50%;
@@ -313,11 +312,13 @@
 }
 .btn-outline-secondary{
 	border-color: #856FD7;
-	color: #856FD7;
+	color: white;
+	background-color: #856FD7;
 }
 .btn-outline-secondary:hover{
 	border-color: #856FD7;
-	background-color: #856FD7;
+	background-color: white;
+	color:#856FD7;
 }
 .btn-outline-primary{
 	margin-top: 2rem;
@@ -329,4 +330,50 @@
 	background-color: white;
 	border-color:#856FD7;
 	color:#856FD7;
+}
+.section-3{
+	padding: 3rem;
+}
+.allinfo{
+	display: flex;
+	flex-direction: row;
+	margin: 1rem;
+	align-items: center;
+}
+.svg-rating{
+	color:#856FD7;
+	width: 18px;
+	height: 18px;
+}
+.rating{
+	padding-right: 3rem;
+	font-size: 18px;
+	font-weight: 650;
+}
+.allscore{
+	font-size: 18px;
+	font-weight: 700;
+}
+.scoreName{
+	display: flex;
+	flex-direction: row;
+	
+}
+.textguest{
+	padding: 2rem;
+	border: 1px solid #856FD7;
+	margin-bottom: 2rem;;
+}
+.nameguest{
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-right: 2rem;
+}
+.scoreguest{
+	padding-bottom: 5px;
+}
+.guestOpinion{
+	padding: 1.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
