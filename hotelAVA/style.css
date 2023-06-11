@@ -137,6 +137,14 @@
 .btn-warning{
 	margin-top: 1rem;
 }
+.btn-warning a{
+	text-decoration: none;
+	color: black;
+}
+.btn-warning:hover{
+	background-color: #856FD7;
+	border-color: #856FD7;
+}
 
 .guest-form{
 	display: flex;
@@ -241,6 +249,14 @@
 	margin: 1rem;
 	margin-left:auto;
 	margin-right: auto;
+}
+.btn-info:hover{
+	background-color: #e467b3;
+	border-color: #e467b3;
+}
+.btn-info a{
+	text-decoration: none;
+	color: white;
 }
 
 .fl{
@@ -383,9 +399,11 @@
 }
 .top-indent{
 	margin-top: 70px;
+	height: 70px;
 	padding: 1rem;
 	background-color: white;
 	color: black;
+	border: 1px solid #856FD7;
 }
 .text-filter{
 	padding-right: 2rem;
@@ -403,6 +421,7 @@
 	display: flex;
 	align-items: center;
 	padding-left:2rem;
+	font-size: 18px;
 }
 .price-button{
 	background-color: #856FD7;
@@ -422,4 +441,28 @@
 	margin-left: 1.5rem;
 	color: #856FD7;
 	font-weight: 600;
+}
+.section-search{
+	margin-top: 140px;
+	padding: 2rem;
+}
+.counterNights{
+	padding: 1.5rem;
+	padding-bottom: 0.2rem;
+	font-size: 20px;
+	font-weight: 650;
+}
+.price{
+	padding: 1.5rem;
+	padding-top: 0.2rem;
+	font-size: 20px;
+	font-weight: 650;
+}
+.form-text{
+	color: red;
+}
+.btn-primary{
+	background-color: #856FD7;
+	color: white;
+	border-color: #856FD7;
 }
