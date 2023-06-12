@@ -37,6 +37,7 @@
 }
 .navbar-nav{
 	margin-left: 2rem;
+	z-index: 10;
 }
 .menu-flex{
 	display: flex;
@@ -465,4 +466,13 @@
 	background-color: #856FD7;
 	color: white;
 	border-color: #856FD7;
+}
+.hidden{
+	display: none;
+}
+.widthDates{
+	width: 100px;
+}
+.widthPeople{
+	width: 50px;
 }

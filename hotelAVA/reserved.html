@@ -26,21 +26,46 @@
 				width: 20px;
     			height: 20px;
 			}
-			.btn-yellow{
-				display: none;
-			}
 			.navbar-collapse{
 				display:block;
 			}
             .navbar-nav{
 				margin-left: 0;
 			}
+            .nav-link{
+				background-color: #e467b3;
+			}
+            .hidden{
+                display: block;
+            }
+			.hiddenSometimes{
+                display: none;
+            }
 		}
 		@media(max-width:1170px)
 		{
 			.room-info{
 				font-size: 15px;
 			}
+            .widthDates{
+                width: 60px;
+            }
+            .widthPeople{
+                width:20px;
+            }
+		}
+        @media(max-width:1278px)
+		{
+			.hiddenSometimes{
+                display: none;
+            }
+            .hidden{
+                display: block;
+            }
+            .search-button{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
 		}
 		@media(max-width: 1450px)
 		{
@@ -48,6 +73,20 @@
 			{
 				width: auto;
 			}
+		}
+        @media(max-width: 1465px)
+		{
+			.flex-row-center
+			{
+				font-size: 15px;
+                padding-left: 1rem;
+                padding-right: 1rem;
+			}
+            .filter-humans{
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
 		}
 	</style>
 </head>
@@ -71,7 +110,7 @@
 							<a class="nav-link" href="otzyvy.html" style="color: white">Отзывы</a>
 						</div>
 						
-							<button type="button" class="btn btn-yellow"><a href="reserved.html">Забронировать</a></button>
+							<button type="button" class="btn btn-yellow hiddenSometimes"><a href="reserved.html">Забронировать</a></button>
 						
 					</div>
 			</div>
@@ -79,19 +118,19 @@
 		</nav>
 		<nav class="fixed-top top-indent">
              <div class="flex-row-center ">
-                Ваш запрос:
+                <div class="hiddenSometimes">Ваш запрос:</div>
                 <div class="flex-row-center text-filter">
                     С 
-                    <input style="width:100px" type="date" min="2023-06-13" name="calendar">
+                    <input class="widthDates" type="date" min="2023-06-13" name="calendar">
                     По 
-                    <input style="width:100px" type="date" min="2023-06-13" name="calendar">
+                    <input class="widthDates" type="date" min="2023-06-13" name="calendar">
                     <div class="filter-humans"> 
                         Взрослые
-                        <input style="width:50px" type="number" min="0" name="humans">
+                        <input class="widthPeople" type="number" min="0" name="humans">
                         Дети
-                        <input style="width:50px" type="number" min="0" name="children">
+                        <input class="widthPeople" type="number" min="0" name="children">
                     </div>
-                    <div class="dropdown" style="width:250px">
+                    <div class="dropdown" style="width:200px">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                             Тариф питания
                         </button>
@@ -102,19 +141,34 @@
                         </ul>
                     </div>
                     
-                    <button class="price-button">
+                    <button class="price-button hiddenSometimes">
                         Цена 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
                         </svg>
                     </button>
-                    <button class="price-button">
+                    <button class="price-button hidden"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                        </svg>
+                    </button>
+                    <button class="price-button hiddenSometimes">
                         Цена
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                         </svg>
                     </button>
-                    <button class="search-button">Найти</button>
+                    <button class="price-button hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                        </svg>
+                    </button>
+                    <button class="search-button hiddenSometimes">Найти</button>
+                    <button class="search-button hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -379,12 +433,19 @@
 				<img src="images/bely.svg" alt="" class="d-inline-block photo-size">
 				<h1><a href="index.html">A<span>V</span>A HOTEL</a></h1>
 			</div>
-			<div class="f2-flex-row">
-				<div class="f2">
-					<a style="color:white;"href="index.html">Главная</a>
+			<div>
+				<div class="f2-flex-row">
+					<div class="f2">
+						<a style="color:black; background-color:#FFFD73"href="index.html">Главная</a>
+					</div>
+					<div class="f2 ">
+						<a style="color:white;" href="otzyvy.html">Отзывы</a>
+					</div>
 				</div>
-				<div class="f2 ">
-					<a style="color:white;" href="otzyvy.html">Отзывы</a>
+				<div class="hidden">
+					<button type="button" class="btn btn-yellow">
+						<a href="reserved.html">Забронировать</a>
+					</button>
 				</div>
 			</div>
 			<div class="f3">

@@ -26,15 +26,21 @@
 				width: 20px;
     			height: 20px;
 			}
-			.btn-yellow{
-				display: none;
-			}
 			.navbar-collapse{
 				display:block;
 			}
             .navbar-nav{
 				margin-left: 0;
 			}
+            .nav-link{
+				background-color: #e467b3;
+			}
+            .hidden{
+                display: block;
+            }
+			.hiddenSometimes{
+                display: none;
+            }
 		}
 		@media(max-width:1170px)
 		{
@@ -71,7 +77,7 @@
 							<a class="nav-link" href="otzyvy.html" style="color: white">Отзывы</a>
 						</div>
 						
-							<button type="button" class="btn btn-yellow"><a href="reserved.html">Забронировать</a></button>
+							<button type="button" class="btn btn-yellow hiddenSometimes"><a href="reserved.html">Забронировать</a></button>
 						
 					</div>
 			</div>
@@ -148,12 +154,19 @@
 				<img src="images/bely.svg" alt="" class="d-inline-block photo-size">
 				<h1><a href="index.html">A<span>V</span>A HOTEL</a></h1>
 			</div>
-			<div class="f2-flex-row">
-				<div class="f2">
-					<a style="color:white;"href="index.html">Главная</a>
+			<div>
+				<div class="f2-flex-row">
+					<div class="f2">
+						<a style="color:black; background-color:#FFFD73"href="index.html">Главная</a>
+					</div>
+					<div class="f2 ">
+						<a style="color:white;" href="otzyvy.html">Отзывы</a>
+					</div>
 				</div>
-				<div class="f2 ">
-					<a style="color:white;" href="otzyvy.html">Отзывы</a>
+				<div class="hidden">
+					<button type="button" class="btn btn-yellow">
+						<a href="reserved.html">Забронировать</a>
+					</button>
 				</div>
 			</div>
 			<div class="f3">
