@@ -48,7 +48,7 @@
 				font-size: 15px;
 			}
             .widthDates{
-                width: 60px;
+                width: 100px;
             }
             .widthPeople{
                 width:20px;
