@@ -1,5 +1,5 @@
 <?
 include "connect.php";
 
-function 
+function reservation(){}
 ?>
