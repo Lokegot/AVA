@@ -8,7 +8,7 @@ const decrementBtn1 = document.getElementById('decrement-btn1');
 const counterValue2 = document.getElementById('counter-value2');
 const incrementBtn2 = document.getElementById('increment-btn2');
 const decrementBtn2 = document.getElementById('decrement-btn2');
-const resetBtn = document.querySelector('#reset');
+//const resetBtn = document.querySelector('#reset');
   
 // To increment the value of counter
 incrementBtn1.addEventListener('click', () => {
