@@ -43,3 +43,16 @@ decrementBtn2.addEventListener('click', () =>
         else counter2 = 0;
     counterValue2.innerHTML = counter2;
     });
+
+$(document).on('click', '#searchRooms', function(){
+    $.ajax({
+        url: 'index.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            grownup: counter1,
+            children: counter2,
+        }
+    })
+    
+})
