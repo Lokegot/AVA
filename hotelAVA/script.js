@@ -1,5 +1,6 @@
 let counter1 = 0;
 let counter2 = 0;
+let vvv='hhj';
 
 const counterValue1 = document.getElementById('counter-value1');
 const incrementBtn1 = document.getElementById('increment-btn1');
@@ -11,10 +12,10 @@ const decrementBtn2 = document.getElementById('decrement-btn2');
 //const resetBtn = document.querySelector('#reset');
   
 // To increment the value of counter
-incrementBtn1.addEventListener('click', () => {
+/*incrementBtn1.addEventListener('click', () => {
     counter1++;
     counterValue1.innerHTML = counter1;
-});
+});*/
   
 // To increment the value of counter
 incrementBtn2.addEventListener('click', () => {
@@ -45,8 +46,9 @@ decrementBtn2.addEventListener('click', () =>
     });
 
 $(document).on('click', '#searchRooms', function(){
+    console.log(vvv, counter2);
     $.ajax({
-        url: 'index.php',
+        url: 'reserved.php',
         type: 'POST',
         dataType: 'json',
         data: {

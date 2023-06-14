@@ -62,7 +62,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
 			<div class="container-fluid ">
 				
-					<a class="navbar-brand" href="index.html" >
+					<a class="navbar-brand" href="index.php" >
 						<img src="images/bely.svg" alt="" width="100" height="40" class="d-inline-block ">
 						A<span>V</span>A HOTEL
 					</a>
@@ -73,11 +73,11 @@
 					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 						
 						<div style="color: white" class="navbar-nav">
-							<a class="nav-link" aria-current="page" href="index.html" style="color: white">Главная</a>
-							<a class="nav-link" href="otzyvy.html" style="color: black; background-color:#FFFD73">Отзывы</a>
+							<a class="nav-link" aria-current="page" href="index.php" style="color: white">Главная</a>
+							<a class="nav-link" href="otzyvy.php" style="color: black; background-color:#FFFD73">Отзывы</a>
 						</div>
 						
-							<button type="button" class="btn btn-yellow hiddenSometimes"><a href="reserved.html">Забронировать</a></button>
+							<button type="button" class="btn btn-yellow hiddenSometimes"><a href="reserved.php">Забронировать</a></button>
 						
 					</div>
 			</div>
@@ -178,16 +178,16 @@
         </div>
         <nav aria-label="...">
             <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Предыдущая</a>
-              </li>
-              <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
               <li class="page-item ">
-                <a class="page-link" href="otzyvy2.html">2 </a>
+                <a class="page-link" href="otzyvy2.php" >Предыдущая</a>
               </li>
-              <li class="page-item"><a class="page-link" href="otzyvy3.html">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="otzyvy2.html">Следующая</a>
+              <li class="page-item " ><a class="page-link" href="otzyvy.php">1</a></li>
+              <li class="page-item ">
+                <a class="page-link" href="otzyvy2.php">2 </a>
+              </li>
+              <li class="page-item active" aria-current="page"><a class="page-link" href="#">3</a></li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Следующая</a>
               </li>
             </ul>
           </nav>
@@ -196,20 +196,20 @@
 		<div class="flex-footer">
 			<div class="fl">
 				<img src="images/bely.svg" alt="" class="d-inline-block photo-size">
-				<h1><a href="index.html">A<span>V</span>A HOTEL</a></h1>
+				<h1><a href="index.php">A<span>V</span>A HOTEL</a></h1>
 			</div>
 			<div>
 				<div class="f2-flex-row">
 					<div class="f2">
-						<a style="color:black; background-color:#FFFD73"href="index.html">Главная</a>
+						<a style="color:black; background-color:#FFFD73"href="index.php">Главная</a>
 					</div>
 					<div class="f2 ">
-						<a style="color:white;" href="otzyvy.html">Отзывы</a>
+						<a style="color:white;" href="otzyvy.php">Отзывы</a>
 					</div>
 				</div>
 				<div class="hidden">
 					<button type="button" class="btn btn-yellow">
-						<a href="reserved.html">Забронировать</a>
+						<a href="reserved.php">Забронировать</a>
 					</button>
 				</div>
 			</div>
