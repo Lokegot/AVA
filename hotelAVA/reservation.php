@@ -92,4 +92,55 @@ function sortDown(){
     }
 }
 
+function getRoom(){
+    include "connect.php";
+    $counter = 0;
+    $q = "select type_room, num_rooms, num_beds, info, photo, price from tb_room";
+    $result = mysqli_query($link, $q);
+    while ($line = mysqli_fetch_assoc($result)){
+        $data[$counter] = $line;
+        $data[$counter]["info"] = json_decode($data[$counter]["info"]);
+        $counter++; 
+    }
+    for ($i = 0; $i < 3; $i++){
+        echo "<div class='col'>
+				  <div class='card h-100'>
+					<img src='images/".$data[$i]['photo']."' class='card-img-top' alt='...'>
+					<div class='card-body'>
+					<h5 class='card-title'>".$data[$i]['type_room']."</h5>
+						<div class='room-info'>
+							<div> 
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Количество спальных мест: ".$data[$i]['num_beds']."
+							</div>
+							<div>
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Количество комант: ".$data[$i]['num_rooms']."
+							</div>
+                            <div>
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Цена за сутки: ".$data[$i]['price']."
+							</div>";
+                            for ($j = 0; $j < count($data[$i]['info']); $j++){
+                                echo "<div>
+								        <svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									    <path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								        </svg>".
+								        $data[$i]['info'][$j]."
+							        </div>";
+                            }
+						echo"
+                        <button type='button' class='btn btn-info'><a href='formForReserved.php'>Выбрать</a></button>
+                        </div>
+					</div>
+				  </div>
+				</div>";
+    }
+}
 ?>

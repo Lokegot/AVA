@@ -190,13 +190,13 @@
 		</div>
 	</section>
 	<section class="section-2">
+		
+	
 		<div class="rooms">
 			<h2 class="info">Наши номера</h2>
-			<!--<hr class="hr-room">-->
-		
-		
 			  <div class="row row-cols-1 row-cols-md-3 g-4">
-				<div class="col">
+			  <?include "reservation.php"; getRoom();?>
+				<!--div class="col">
 				  <div class="card h-100">
 					<img src="images/room-2.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
@@ -420,7 +420,7 @@
 					</div>
 					</div>
 				  </div>
-				</div>
+				</div-->
 			  </div>
 		  </div>
 		</div>
