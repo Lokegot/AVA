@@ -87,18 +87,28 @@
 	<section class="section-otzyv">
         <h2 style="padding-top: 1rem;">Оставьте свой отзыв</h2>
 		<div style="padding:1rem;">
+		
 		<form method="post">
 			<div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" name = "nickname" required = "required" pattern='^[A-Za-z0-9А-Яа-яЁё\s]+$'class="form-control" placeholder="Укажите свой ник" aria-label="Username" aria-describedby="basic-addon1">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">Выберите оценку</button>
+				<p> Выберите оценку
+                <select class="btn btn-outline-secondary dropdown-toggle" name = 'ocenka'>
+					<option class="dropdown-item" value ='1'>1 звезда</option>
+					<option class="dropdown-item" value ='2'>2 звезды</option>
+					<option class="dropdown-item" value ='3'>3 звезды</option>
+					<option class="dropdown-item" value ='4'>4 звезды</option>
+					<option class="dropdown-item" value ='5'>5 звезд</option>
+				</select>
+				</p>
+				<!--button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">Выберите оценку</button>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">1 звезда</a></li>
                   <li><a class="dropdown-item" href="#">2 звезды</a></li>
                   <li><a class="dropdown-item" href="#">3 звезды</a></li>
                   <li><a class="dropdown-item" href="#">4 звезды</a></li>
                   <li><a class="dropdown-item" href="#">5 звезды</a></li>
-                </ul>
+                </ul-->
             </div>
               <div class="input-group">
                 <textarea name = "review" required = "required" class="form-control" pattern='^[A-Za-z0-9А-Яа-яЁё\s]+$' placeholder="Оставьте тут свой отзыв" aria-label="With textarea"></textarea>
@@ -112,9 +122,10 @@
 					include "reservation.php";
 					$nickname = $_POST['nickname'];
 					$review = $_POST['review'];
+					$value = $_POST['ocenka'];
 					$flag = 1;
 					if(!getNickname($nickname)){
-						setReviews($nickname, $review, 3);
+						setReviews($nickname, $review, $value);
 					}					
 					elseif($flag) {echo "Пользователь с таким ником уже существует"; $flag = 0;}
 					
@@ -134,7 +145,7 @@
 			getReviews();}?>
           
         
-        <nav aria-label="...">
+        <!--nav aria-label="...">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Предыдущая</a>
@@ -148,7 +159,7 @@
                 <a class="page-link" href="otzyvy2.php">Следующая</a>
               </li>
             </ul>
-          </nav>
+          </nav-->
 	</section>
 	<footer class="section-2 pink-background">
 		<div class="flex-footer">
