@@ -1,10 +1,4 @@
 <?
-// function reservation($calendarIn, $calendarOut, $grownup, $children){
-//     setcookie('calendarin', $calendarIn, time()+60*60*24*7);
-//     setcookie("calendarout", $calendarOut, time()+60*60*24*7);
-//     setcookie("grownup", $grownup, time()+60*60*24*7);
-//     setcookie("children", $children, time()+60*60*24*7);
-// }
 function getNickname($nickname){
     include "connect.php";
     $q = "select count(nickname) 'count' from tb_reviews where nickname = '$nickname';";
@@ -22,6 +16,16 @@ function setReviews($nickname, $review, $estimation){
     }
     else return 1;
 }
+
+function getTarif(){
+    include "connect.php";
+    $q = "select id_rates, power_rates from tb_rates";
+    $result = mysqli_query($link, $q);
+    while($link = mysqli_fetch_assoc($result)){
+        echo "<option class='dropdown-item' value ='".$link['id_rates']."'>".$link['power_rates']."</option>";
+    }
+}
+
 function getReviews(){
     include "connect.php";
     $q = "select nickname, rating, comm from tb_reviews";
