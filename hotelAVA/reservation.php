@@ -1,4 +1,80 @@
 <?
+function filter($dateIn, $dateOut, $num_beds){
+    include "connect.php";
+    $q = "select type_room, num_rooms, num_beds, info, photo, price from tb_room where (out_date < '".date_format(date_create($dateIn), "d.m.Y")."' or out_date is null) and num_beds >= $num_beds";
+    $result = mysqli_query($link, $q);
+    $flag = 0;
+    
+    while ($line = mysqli_fetch_assoc($result)){
+        $data[$counter] = $line;
+        $data[$counter]["info"] = json_decode($data[$counter]["info"]);
+        $counter++;
+        $flag = 1; 
+    }
+    //echo count($data)."\t".$data[1]['type_room']."\t"."$num_beds";
+    if($flag != 0){
+    for ($i = 0; $i < count($data); $i++){
+        echo "<div class='col'>
+				  <div class='card h-100'>
+					<img src='images/".$data[$i]['photo']."' class='card-img-top' alt='...'>
+					<div class='card-body'>
+					<h5 class='card-title'>".$data[$i]['type_room']."</h5>
+						<div class='room-info'>
+							<div> 
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Количество спальных мест: ".$data[$i]['num_beds']."
+							</div>
+							<div>
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Количество комант: ".$data[$i]['num_rooms']."
+							</div>
+                            <div>
+								<svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									<path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								</svg>
+								Цена за сутки: ".$data[$i]['price']."
+							</div>";
+                            //.var_dump($data[$i]);
+                            for ($j = 0; $j < count($data[$i]['info']); $j++){
+                                echo "<div>
+								        <svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
+									    <path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
+								        </svg>".
+								        $data[$i]['info'][$j]."
+							        </div>";
+                            }
+						echo"
+                        <button type='button' class='btn btn-info'><a href='formForReserved.php'>Выбрать</a></button>
+                        </div>
+					</div>
+				  </div>
+				</div>";
+    }
+    }
+    else{
+        echo "<div class='col'> По вашему запросу, номеров не найдено </div>";
+    }
+
+}
+function sCookie(){
+    if(!empty($_POST['calendar1'])){
+        setcookie('dateIn', $_POST['calendar1'], time()+60*60*24*7);
+    }
+    if(!empty($_POST["calendar2"])){
+        setcookie('dateOut', $_POST['calendar2'], time()+60*60*24*7);
+    }
+    if(!empty($_POST["humans"])){
+        setcookie('humans', $_POST['humans'], time()+60*60*24*7);
+    }
+    if(!empty($_POST["children"])){
+        setcookie('children', $_POST['children'], time()+60*60*24*7);
+    }
+}
+
 function getNickname($nickname){
     include "connect.php";
     $q = "select count(nickname) 'count' from tb_reviews where nickname = '$nickname';";
@@ -59,9 +135,9 @@ function getReviews(){
 function setReservation($nomer,$tarif, $people, $dateIn, $dareOut, $fio, $mail){
     include "connect.php";
     $rPrice; $price;
-    $days = date_diff($dateIn,$dareOut);
+    $days = date_diff(date_create($dateIn),date_create($dareOut));
     $days = $days -> days;
-    $priceTarif = "select r_price from tb_rates where power_rates = '$tarif'";
+    $priceTarif = "select r_price from tb_rates where id_rates = '$tarif'";
     $result = mysqli_query($link, $priceTarif);
     while ($row = mysqli_fetch_assoc($result)){
         $rPrice = $row['r_price'];
@@ -71,8 +147,13 @@ function setReservation($nomer,$tarif, $people, $dateIn, $dareOut, $fio, $mail){
     while ($row = mysqli_fetch_assoc($result)){
         $price = $row['price'];
     }
+    $idRoom = "select id_room from tb_room where hotel_room = $nomer";
+    $result = mysqli_query($link, $idRoom);
+    while($row = mysqli_fetch_assoc($result)){
+        $idRoom = $row['id_room'];
+    }
     $price = ($people*$rPrice*$days) + $days*$price;
-    $reservation = "inser into tb_reservation (id_room, status, price, date_in, date_out, fio, p_mail) values ($nomer, 1, $price, $dateIn, $dareOut, $fio, $mail)";
+    $reservation = "insert into tb_reservation (id_room, status, price, date_in, date_out, fio, p_mail) values ($idRoom, 1, $price, '".date_format(date_create($dateIn), "d.m.Y")."', '".date_format(date_create($dateOut), "d.m.Y")."', '$fio', '$mail'    )";
     mysqli_query($link, $reservation);
 }
 function sortUp(){
@@ -99,15 +180,16 @@ function sortDown(){
 function getRoom(){
     include "connect.php";
     $counter = 0;
-    $q = "select type_room, num_rooms, num_beds, info, photo, price from tb_room";
+    $q = "select hotel_room, type_room, num_rooms, num_beds, info, photo, price from tb_room";
+    $final_result;
     $result = mysqli_query($link, $q);
     while ($line = mysqli_fetch_assoc($result)){
         $data[$counter] = $line;
         $data[$counter]["info"] = json_decode($data[$counter]["info"]);
         $counter++; 
     }
-    for ($i = 0; $i < 3; $i++){
-        echo "<div class='col'>
+    for ($i = 0; $i < count($data); $i++){
+        $final_result .= "<div class='col'>
 				  <div class='card h-100'>
 					<img src='images/".$data[$i]['photo']."' class='card-img-top' alt='...'>
 					<div class='card-body'>
@@ -132,19 +214,27 @@ function getRoom(){
 								Цена за сутки: ".$data[$i]['price']."
 							</div>";
                             for ($j = 0; $j < count($data[$i]['info']); $j++){
-                                echo "<div>
+                                $final_result .= "<div>
 								        <svg xmlns='http://www.w3.org/2000/svg' class='room-dot' fill='currentColor' class='bi bi-dot' viewBox='0 0 16 16'>
 									    <path d='M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/>
 								        </svg>".
 								        $data[$i]['info'][$j]."
 							        </div>";
                             }
-						echo"
-                        <button type='button' class='btn btn-info'><a href='formForReserved.php'>Выбрать</a></button>
-                        </div>
+                            $final_result .="
+                        <input type='submit' class='btn btn-info' name='btn".$data[$i]['hotel_room']."' value='Выбрать'>";
+                        if(isset($_POST['btn'.$data[$i]['hotel_room'].''])){
+                            #$final_result .= $data[$i]['hotel_room'];
+                            header("Location: formForReserved.php?id=".$data[$i]['hotel_room']);
+                        }
+                        $final_result .= "</div>
 					</div>
 				  </div>
 				</div>";
     }
+    return $final_result;
+}
+function printCard($q){
+    echo $q;
 }
 ?>
