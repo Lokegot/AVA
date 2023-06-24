@@ -1,3 +1,5 @@
+<? include "reservation.php";
+$q = getRoom();?>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -116,44 +118,46 @@
 			</div>
            
 		</nav>
+		<form action="" method="post">
 		<nav class="fixed-top top-indent">
              <div class="flex-row-center ">
                 <div class="hiddenSometimes">Ваш запрос:</div>
                 <div class="flex-row-center text-filter">
                     С 
-                    <input class="widthDates" type="date" min="2023-06-13" name="calendar">
+                    <input class="calendar" type="date" value="<?if (!empty($_COOKIE['dateIn'])){ echo $_COOKIE['dateIn']; } else echo '2023-06-24';?>" min="2023-06-13" name="calendar1">
                     По 
-                    <input class="widthDates" type="date" min="2023-06-13" name="calendar">
+                    <input class="calendar" type="date" value="<?if (!empty($_COOKIE['dateIn'])){ echo $_COOKIE['dateOut']; } else echo '2023-06-25';?>" min="2023-06-13" name="calendar2">
                     <div class="filter-humans"> 
                         Взрослые
-                        <input class="widthPeople" type="number" min="0" name="humans">
+                        <input class="widthPeople" type="number" min="0" value="<?if (!empty($_COOKIE['humans'])){ echo $_COOKIE['humans']; } else echo '0';?>"  name="humans">
                         Дети
-                        <input class="widthPeople" type="number" min="0" name="children">
+                        <input class="widthPeople" type="number" min="0" value="<?if (!empty($_COOKIE['children'])){ echo $_COOKIE['children']; } else echo '0';?>" name="children">
                     </div>
-                    <div class="dropdown" style="width:200px">
-					<p class='btn dropdown-toggle'> Выберите оценку
-                		<select class="btn btn-outline-secondary dropdown-toggle" name = 'rates'>
-							<?include "reservation.php";
-							 getTarif();?>
-						</select>
-				</p>
-                    </div>
+					
+                    <input type='submit' value='Найти' name = "sub" class="search-button">
+					</form>
                 </div>
             </div>
         </nav>
 	</header>
 	<section class="section-search">
+		<form method="post">
 		<div style="padding-left: 2rem; padding-right: 2rem;">
             <h2 style="padding-bottom: 2rem;">Предложения по вашему запросу</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             
-			  <?#include "reservation.php";
-			  #var_dump($_POST);
-			  getRoom();?>
+			  <?
+			  //echo date_format(date_create($_COOKIE['dateIn']), 'd.m.Y');
+			  #include "reservation.php";
+			  if(isset($_POST['sub'])){
+				  filter($_POST['calendar1'], $_POST['calendar2'], ($_POST['humans'] + $_POST['children'])/2 );
+			  }
+			  else{
+			  printCard($q);}?>
             </div>
           </div>
       </div>
-    </div>
+    </div></form>
 	</section>
 	<section class="section-2">
 		
@@ -199,7 +203,7 @@
 			</div>
 		</div>
 	</footer>
-	<script src="script.js"></script>
+	<!--script src="script.js"></script-->
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>

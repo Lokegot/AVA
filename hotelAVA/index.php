@@ -1,3 +1,5 @@
+<? include "reservation.php";
+$q = getRoom();?>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -96,33 +98,29 @@
 					<div class="parametrs" style="width:90%">
 						<form class="forms" method="post">
 							<div style="margin-top: 0;"class="date">Дата заселения: </div>
-							<input style="width:250px" class="calendar" type="date" value="2023-06-14" min="2023-05-24" name="calendar1">
+							<input style="width:250px" class="calendar" type="date" value="2023-06-24" min="2023-06-14" name="calendar1">
 							<div class="date">Дата выселения: </div>
-							<input style="width:250px" class="calendar" type="date" value="2023-06-14" min="2023-06-14" name="calendar2">
+							<input style="width:250px" class="calendar" type="date" value="2023-06-25" min="2023-06-25" name="calendar2">
 							<div class="guest-form">Количество гостей: 
 								<div class="guests">
-									<div class="counter">
-										<div class="humans">Взрослые</div>
-										<div class="humanCount">
-											<button type="button" id="decrement-btn1">-</button>
-											<div id="counter-value1">0</div>
-											<button type="button" id="increment-btn1">+</button>
-										</div>
-									</div>
-
-									<div class="counter">
-										<div class="humans">Дети</div>
-										<div class="humanCount">
-											<button type="button" id="decrement-btn2">-</button>
-											<div id="counter-value2">0</div>
-											<button type="button" id="increment-btn2">+</button>
-										</div>
-									</div>
+								<div class="filter-humans">
+                        			Взрослые
+                        			<input class="widthPeople" type="number" min="0" name="humans">
+                        			Дети
+                        			<input class="widthPeople" type="number" min="0" name="children">
+                    				</div>
 								</div>
 							</div>
 							<!--<input style="margin-top:1.5rem; margin-bottom: 1.5rem; width:250px" type="number">-->
 							
-							<button type="submit"class="btn btn-warning" id="searchRooms"><a class="" href="reserved.php">Найти номера</a></button>
+							<input type="submit"class="btn btn-warning" id="searchRooms" name = 'info' value = 'Найти номера'>
+								<?
+								#include "reservation.php";
+								if(isset($_POST['info'])){
+									sCookie();
+									header("Location: reserved.php");
+								}
+								?>
 						</form>
 					</div>
 				</div>
@@ -190,16 +188,16 @@
 		</div>
 	</section>
 	<section class="section-2">
-		
+		<form method="post">
 	
 		<div class="rooms">
 			<h2 class="info">Наши номера</h2>
 			  <div class="row row-cols-1 row-cols-md-3 g-4">
-			  <?include "reservation.php"; getRoom();?>
+			  <?printCard($q);?>
 			  </div>
 		  </div>
 		</div>
-
+		</form>
 	</section>
 	<footer class="section-2 pink-background">
 		<div class="flex-footer">
@@ -240,7 +238,18 @@
 		</div>
 	</footer>
 	<script src = "jquery.js"></script>
-	<script src="script.js"></script>
+	<!--script>document.getElementById('btn0').addEventListener('click', ()=>{
+		console.log('ffffffffffff');
+		$.ajax({
+			url: 'formForReserved.php',
+			type: 'POST',
+			dataType: 'html',
+			data: {text: 394},
+			success: function(data){
+
+			}
+		})
+	});</script-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
 </html>

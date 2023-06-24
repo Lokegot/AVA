@@ -87,65 +87,56 @@
              <div class="flex-row-center ">
                 Ваш запрос:
                 <div class="flex-row-center text-filter">
-                    С 
-                    <input style="width:100px" type="date" min="2023-06-13" name="calendar">
+				С 
+                    <input class="calendar" type="date" value="<?if (!empty($_COOKIE['dateIn'])){ echo $_COOKIE['dateIn']; } else echo '2023-06-24';?>" min="2023-06-13" name="calendar1">
                     По 
-                    <input style="width:100px" type="date" min="2023-06-13" name="calendar">
+                    <input class="calendar" type="date" value="<?if (!empty($_COOKIE['dateIn'])){ echo $_COOKIE['dateOut']; } else echo '2023-06-25';?>" min="2023-06-13" name="calendar2">
                     <div class="filter-humans"> 
                         Взрослые
-                        <input style="width:50px" type="number" min="0" name="humans">
+                        <input class="widthPeople" type="number" min="0" value="<?if (!empty($_COOKIE['humans'])){ echo $_COOKIE['humans']; } else echo '0';?>"  name="humans">
                         Дети
-                        <input style="width:50px" type="number" min="0" name="children">
+                        <input class="widthPeople" type="number" min="0" value="<?if (!empty($_COOKIE['children'])){ echo $_COOKIE['children']; } else echo '0';?>" name="children">
                     </div>
-                    <div class="dropdown" style="width:250px">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                            Тариф питания
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">Всё включено</a></li>
-                            <li><a class="dropdown-item" href="#">Только завтрак</a></li>
-                            <li><a class="dropdown-item" href="#">Только ужин</a></li>
-                        </ul>
-                    </div>
-                    
-                    <button class="price-button">
-                        Цена 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-                        </svg>
-                    </button>
-                    <button class="price-button">
-                        Цена
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                        </svg>
-                    </button>
-                    <button class="search-button">Найти</button>
+                    <div class="dropdown" style="width:200px">
+					<p class='btn dropdown-toggle'> Выберите тариф питания
+                		<select class="btn btn-outline-secondary dropdown-toggle" name = 'rates' value="<?echo $_COOKIE['rates'];?>">
+							<?include "reservation.php";
+							 getTarif();
+							 ?>
+						</select>
+					</p>
                 </div>
             </div>
         </nav>
 	</header>
 	<section class="section-search">
 		<h2>Заполните свои данные для бронирования номера</h2>
-        <form>
+        <form method="post">
             <div class="mb-3">
                 <label for="surname" class="form-label">Фамилия</label>
-                <input type="text" class="form-control" id="surname" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" id="surname" aria-label="Username" name='lastname' aria-describedby="addon-wrapping">
             </div>
             <div class="mb-3">
                 <label for="name" class="form-label">Имя</label>
-                <input type="text" class="form-control" id="name"  aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" id="name"  aria-label="Username" name='name' aria-describedby="addon-wrapping">
             </div>
             <div class="mb-3">
                 <label for="secondname" class="form-label">Отчество</label>
-                <input type="text" class="form-control" id="secondname" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" id="secondname" aria-label="Username" name='otec' aria-describedby="addon-wrapping">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="exampleInputEmail1" name='email' aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">Бронирование снимается по истечении 3-х дней, если не поступила полная или частичная оплата</div>
             </div>
-            <button type="submit" class="btn btn-primary">Забронировать</button>
+            <input type="submit" class="btn btn-primary" value='Забронировать' name='bron'>
+			<?
+				if(isset($_POST['bron'])){
+					#include "reservation.php";
+					$fio = $_POST['lastname']." ".$_POST['name']." ".$_POST['otec'];
+					setReservation($_GET['id'], $_POST['rates'], $_COOKIE['humans']+$_COOKIE['children'], $_COOKIE['dateIn'], $_COOKIE['dateOut'], $fio, $_POST['email']);
+				}
+			?>
           </form>
 	</section>
 	<footer class="section-2 pink-background">
